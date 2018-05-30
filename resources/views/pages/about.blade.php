@@ -70,10 +70,23 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    About
+                    About {{$fullname}}
                 </div>
-                <p>Here is the beginning of the jurney</p>
+                <p><b>Contact me At {{$email}}</b></p>
+                <table border="1">
 
+                    <tr>
+                        <th>ID</th>
+                        <th>Phone</th>
+                    </tr>
+                    <tr>
+                        <td>{{$info['id']}}</td>
+                        <td>{{$info['phone']}}</td>
+                    </tr>
+                </table>
+
+
+                .
             </div>
         </div>
     </body>
