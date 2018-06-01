@@ -19,64 +19,31 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                       <ul class="navbar-nav">
-                            <li class="nav-item ">
-                              <a class="nav-link " href="/">Home <span class="sr-only">(current)</span></a>
+                            <li class="nav-item active">
+                              <a class="nav-link " href="#">Home <span class="sr-only">(current)</span></a>
                             </li>
-                            <li class="nav-item ">
+                            <li class="nav-item">
                               <a class="nav-link" href="/about">About</a>
                             </li>
-                            <li class="nav-item active">
+                            <li class="nav-item">
                               <a class="nav-link" href="/contact">Contact</a>
                             </li>
-                            <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle "  href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown link
+                      </ul>
+                       <div class="nav navbar-nav  dropdown" align="right">
+                              <a class="nav-link dropdown-toggle"   href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                 Dropdown link
                               </a>
                               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="#">Action</a>
                                 <a class="dropdown-item" href="#">Another action</a>
                                 <a class="dropdown-item" href="#">Something else here</a>
                               </div>
-                            </li>
-                        </ul>
+                      </div>
                </div>
         </nav>
         <!-- End Nav -->
         <div class = "container"> <!-- Start Container -->
-          <div class="row"><!-- start jubotron -->
-                  <div class="col-md-12 col-offset-3">
-                      <div class="jumbotron">
-                          <h1 class="display-4">Contact</h1>
-                          <p class="lead">Welcome to my blog and many thanks for 
-                              interested in my blog.
-                          </p>
-                          
-                      </div>
-                      <form>
-                          <div  class="form-group">
-                              <label name="email">Email:</label>
-                              <input  id="email" name="email" class="form-control">
-                          </div>
-                           <div  class="form-group">
-                              <label name="subject">Subject:</label>
-                              <input  id="subject" name="subject" class="form-control">
-                          </div>
-                          <div  class="form-group">
-                              <label name="message">Message:</label>
-                              <textarea id="message" name="message" class="form-control" 
-                                     placeholder="Write your message here..">
-                              </textarea>  
-                          </div>
-                          <input type="submit" class="btn btn-success">
-
-                      </form>
-
-
-                  </div>
-          </div><!-- end jumbotron -->
-
-
-
+              @yield('content')
         </div><!--End Container   -->
        
       
