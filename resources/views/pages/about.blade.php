@@ -1,4 +1,5 @@
 @extends('main')
+@section('title','| About')
 @section('content')
         <div class = "container"> <!-- Start Container -->
           <div class="row"><!-- start jubotron -->

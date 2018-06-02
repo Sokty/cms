@@ -1,5 +1,5 @@
 @extends('main')
-
+@section('title','| Home')
 @section('content')
         <div class = "container"> <!-- Start Container -->
       
