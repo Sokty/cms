@@ -5,11 +5,12 @@
 </head>
   <body>
         @include('partial._nav')
-        
+
         <div class = "container"> <!-- Start Container -->
               @yield('content')
-              @include('partial._footer')           
+              @include('partial._footer')
         </div><!--End Container   -->
         @include('partial._javascript')
-  </body>
+        @yield('scripts')
+    </body>
 </html>

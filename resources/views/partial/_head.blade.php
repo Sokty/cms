@@ -1,4 +1,4 @@
-<!-- this is the use of partial blade , it is partial of master page  -->
+ <!-- this is the use of partial blade , it is partial of master page  -->
 
 
     <!-- Required meta tags -->
@@ -9,5 +9,4 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
     <title>Laravel @yield('title')</title>
- </head>
-
+    @yield('stylesheets')
