@@ -1,2 +1,2 @@
  <hr>
- <p class="text-center"> Copy Right,Soty Eam</p>
+ <p class="text-center"> Copy Right,Sokty Eam</p>
