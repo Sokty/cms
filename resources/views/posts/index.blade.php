@@ -1,5 +1,5 @@
 @extends('main')
-@section('title','All posts')
+@section('title','| All posts')
 @section('content')
   <div class="row">
     <div class="col-md-9">
@@ -29,7 +29,7 @@
                       <td>{{substr($post->title,0,20)}}{{strlen($post->title)>20 ? "..." : ""}}</td>
                       <td>{{substr($post->body,0,20)}}{{strlen($post->body)>20 ? "..." : ""}}</td>
                       <td>{{date('M j Y h:iA',strtotime($post->created_at))}}</td>
-                      <td><a href="{{route('posts.show',$post->id)}}" class="btn btn-success btn-sm">View</a> <a href="{{route('posts.edit',$post->id)}}" class="btn btn-primary btn-sm">Edit</a></td>
+                      <td><a href="{{route('posts.show',$post->id)}}" class="btn btn-info btn-sm">View</a> <a href="{{route('posts.edit',$post->id)}}" class="btn btn-warning btn-sm">Edit</a></td>
                     </tr>
                 @endforeach
           </tbody>
