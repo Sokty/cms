@@ -50,7 +50,8 @@ class PostController extends Controller
         //if the post is successfully save , pass the message to the session
         Session::flash('success','the blog post was successfully saved');
         //redirect to the show view and pass the post id to it
-        return redirect()->route('posts.show',$post->id);
+        return redirect()->route('posts.create');
+
     }
 
     /**
@@ -73,7 +74,12 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        // create a variable and pass the  current post to it 
+        $post = Post::find($id);
+
+        //return a view and pass in the abov variable,$post
+        return view('posts.edit')->withPost($post);     
+        // the view, edit.blade.php is created in posts folder then
     }
 
     /**
@@ -85,7 +91,19 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
+        $this->validate($request,array(
+          'title' =>'required|max:255',
+          'body'  =>'required'
+        ));
+        $post = new Post;
+        $post->title = $request->title; //new of the post = the title sumbited from the form
+        $post->body = $request->body;
+        $post->save();
+        //if the post is successfully save , pass the message to the session
+        Session::flash('success','the blog post was successfully update');
+        //redirect to the show view and pass the post id to it
+        return redirect()->route('posts.show','$post->id');
     }
 
     /**
