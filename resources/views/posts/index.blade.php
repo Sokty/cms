@@ -30,7 +30,14 @@
                       <td>{{substr($post->title,0,20)}}{{strlen($post->title)>20 ? "..." : ""}}</td>
                       <td>{{substr($post->body,0,20)}}{{strlen($post->body)>20 ? "..." : ""}}</td>
                       <td>{{date('M j Y h:iA',strtotime($post->created_at))}}</td>
-                      <td><a href="{{route('posts.show',$post->id)}}" class="btn btn-info btn-sm">    View</a> <a href="{{route('posts.edit',$post->id)}}" class="btn btn-warning btn-sm">Edit</a></td>
+                      <td>
+                        {{-- route  --}}
+                        <a href="{{route('posts.show',$post->id)}}" class="btn btn-info btn-sm">View</a> 
+                        <a href="{{route('posts.edit',$post->id)}}" class="btn btn-warning btn-sm">Edit</a>
+                        {{-- {!!Form::open(['route' => ['posts.destroy',$post->id],'method' => 'DELETE'])!!}
+                            {{Form::submit('Delet',['class' => 'btn btn-danger btn-sm'])}}
+                        {!!Form::close()!!} --}}
+                      </td>
                       
 
                     </tr>
