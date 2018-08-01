@@ -7,7 +7,7 @@
         <h1>All Posts</h1>
     </div>
     <div class="col-md-3">
-        <a href="{{route('posts.create')}}" class="btn btn-lg btn-block btn-secondary">Create a New Post</a>
+        <a href="{{route('posts.create')}}" class="btn btn-lg btn-block btn-primary">Create a New Post</a>
     </div>
     <hr>
 
@@ -28,12 +28,12 @@
                     <tr>
                       <td><b>{{$post->id}}</b></td>
                       <td>{{substr($post->title,0,20)}}{{strlen($post->title)>20 ? "..." : ""}}</td>
-                      <td>{{substr($post->body,0,20)}}{{strlen($post->body)>20 ? "..." : ""}}</td>
+                      <td>{{substr($post->body,0,50)}}{{strlen($post->body)>50 ? "..." : ""}}</td>
                       <td>{{date('M j Y h:iA',strtotime($post->created_at))}}</td>
                       <td>
-                        {{-- route  --}}
-                        <a href="{{route('posts.show',$post->id)}}" class="btn btn-info btn-sm">View</a> 
-                        <a href="{{route('posts.edit',$post->id)}}" class="btn btn-warning btn-sm">Edit</a>
+                        {{-- go to resource controller posts.show/id --}}
+                        <a href="{{route('posts.show',$post->id)}}" class="btn btn-default btn-sm">View</a> 
+                        <a href="{{route('posts.edit',$post->id)}}" class="btn btn-primary btn-sm">Edit</a>
                         {{-- {!!Form::open(['route' => ['posts.destroy',$post->id],'method' => 'DELETE'])!!}
                             {{Form::submit('Delet',['class' => 'btn btn-danger btn-sm'])}}
                         {!!Form::close()!!} --}}
@@ -45,8 +45,12 @@
           </tbody>
       </table>
 
-    </div>
-
+      {{-- paginate links --}}
+      <div class="text-center">
+        {!!$posts->links();!!}
+      </div>
+      
+    </div>  
   </div>
 
 @stop

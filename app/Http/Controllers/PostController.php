@@ -16,7 +16,7 @@ class PostController extends Controller
     public function index()
     {
         //create a vriable to store all the posts from the database in it
-        $posts = Post::all();
+        $posts = Post::orderBy('id','desc')->paginate('8');
         //return a view and pass in the above variable
         return view('posts.index')->withPosts($posts);
     }
@@ -126,8 +126,5 @@ class PostController extends Controller
         return redirect()->route('posts.index');
 
     }
-    public function insert()
-    {
-        // insert a new created item to the database 
-    }
+    
 }

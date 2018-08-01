@@ -1,36 +1,33 @@
-<!-- Start Nav -->
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-              <a class="navbar-brand" href="#">Laravel Blog</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                      <ul class="navbar-nav">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Laravel</a>
+    </div>
 
-                           
-                            <li class="nav-item {{Request::is('contact') ? "active" : ""}}">
-
-                            <li class="nav-item {{Request::is('/') ? 'active' : ''}}">
-                              <a class="nav-link " href="/">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item {{Request::is('about') ? 'active' : ''}}">
-                              <a class="nav-link" href="/about">About</a>
-                            </li>
-                            <li class="nav-item {{Request::is('contact') ? 'active' : ''}}">
-
-                              <a class="nav-link" href="/contact">Contact</a>
-                            </li>
-                      </ul>
-                       <div class="nav navbar-nav  dropdown" align="right">
-                              <a class="nav-link dropdown-toggle"   href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                 Dropdown link
-                              </a>
-                              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                              </div>
-                      </div>
-               </div>
-        </nav>
-        <!-- End Nav -->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav pull-right">
+        <li class="{{Request::is('/') ? 'active' : ''}}"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+        <li class="{{Request::is('about') ? 'active' : ''}}"><a href="/about">About</a></li>
+        <li class="{{Request::is('contact') ? 'active' : ''}}"><a href="/contact">Contact</a></li>
+        <li class="dropdown ">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

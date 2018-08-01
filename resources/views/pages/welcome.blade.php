@@ -14,27 +14,17 @@
                       </div>
                   </div>
               </div>
-              
+          
 
               <div class="row">
                   <div class = "col-md-8">
+                      @foreach ($posts as $post)
                         <div class="post">
-                            <a href="#"><h3>US confident on plans for Trump-Kim talks</h3></a>
-                            <p>
-                              US Secretary of State Mike Pompeo has said preparations for talks with 
-                              North Korea are "moving in the right direction" but that there is 
-                              "a great deal of work to do"
-                            </p>
+                            <h3>{{$post->title}}</h3>
+                            <p>{{substr($post->body,0,300)}} {{strlen($post->body) > 300 ? "..." : "" }}</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
                         </div>
-
-                        <div class="post">
-                            <a href="#"><h3>US confident on plans for Trump-Kim talks</h3></a>
-                            <p>
-                              US Secretary of State Mike Pompeo has said preparations for talks with 
-                              North Korea are "moving in the right direction" but that there is 
-                              "a great deal of work to do"
-                            </p>
-                        </div>
+                      @endforeach
                   </div>
                   <div class="col-md-4">
                        <h3> This side Bar</h3>

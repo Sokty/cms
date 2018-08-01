@@ -1,10 +1,13 @@
 <?php
 namespace App\Http\Controllers;
+use App\Post;
 
 class PagesController extends Controller{
 
 	public function getIndex(){
-		return view('pages.welcome');
+		//query all posts and order by created_at Descending, limit 5 posts per page.
+		$posts = Post::orderBy('created_at','desc')->limit(5)->get();
+		return view('pages.welcome')->withPosts($posts);
 		//return view('welcome'); if not in sub-folder
 	}
 
