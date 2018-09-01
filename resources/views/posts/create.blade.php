@@ -7,7 +7,7 @@
 @endsection
 @section('content')
 	<div class="row">
-		<div class="col-md-8 col-md-offset-4">
+		<div class="col-md-8 col-md-offset-2">
 			<h1>Create A New Post</h1>
 			{!! Form::open(['route' => 'posts.store','data-parsley-validate']) !!}
     			{{Form::label('title','Title:')}}
